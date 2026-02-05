@@ -498,8 +498,8 @@ const Scene6StreamingText: React.FC<{ fps: number }> = ({ fps }) => {
   // Reveal 4 characters per frame (fast streaming)
   const charsRevealed = Math.min(frame * 4, totalChars);
 
-  // Auto-scroll effect
-  const scrollY = interpolate(frame, [20, 80], [0, -150], {
+  // Subtle scroll as content grows
+  const scrollY = interpolate(frame, [30, 80], [0, -60], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.out(Easing.quad),
@@ -554,12 +554,22 @@ const Scene6StreamingText: React.FC<{ fps: number }> = ({ fps }) => {
     <AbsoluteFill style={{ backgroundColor: "#FFFFFF" }}>
       <AbsoluteFill
         style={{
-          padding: "60px 32px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           opacity: fadeIn,
           transform: `translateY(${scrollY}px)`,
         }}
       >
-        {renderedContent}
+        <div
+          style={{
+            width: "85%",
+            maxWidth: 340,
+            textAlign: "left",
+          }}
+        >
+          {renderedContent}
+        </div>
       </AbsoluteFill>
     </AbsoluteFill>
   );
