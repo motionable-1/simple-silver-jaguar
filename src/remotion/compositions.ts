@@ -4,8 +4,8 @@ import { Main } from "./compositions/Main";
 export const composition = {
   id: "Main",
   component: Main,
-  durationInFrames: 150,
+  durationInFrames: 375,
   fps: 30,
-  width: 1920,
-  height: 1080,
+  width: 720,
+  height: 1280,
 };
