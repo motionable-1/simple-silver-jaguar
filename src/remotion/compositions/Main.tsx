@@ -21,6 +21,8 @@ const SCENE_7_START = 270; // CTA (270-345 frames = 2.5s)
 // Colors
 const GRADIENT_TOP = "#E8A698";
 const GRADIENT_BOTTOM = "#9FA6E0";
+const RED_TOP = "#FF6B6B";
+const RED_BOTTOM = "#EE5A5A";
 const LIGHT_BLUE_TOP = "#BBE0FF";
 const LIGHT_BLUE_BOTTOM = "#E0EFFF";
 
@@ -97,7 +99,7 @@ const Scene1Typing: React.FC<{ fps: number }> = ({ fps }) => {
 
   return (
     <AbsoluteFill>
-      <GradientBackground />
+      <GradientBackground topColor="#A8E6CF" bottomColor="#88D8A0" />
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
         <div
           style={{
@@ -552,10 +554,7 @@ const Scene6StreamingText: React.FC<{ fps: number }> = ({ fps }) => {
 
   return (
     <AbsoluteFill>
-      <GradientBackground
-        topColor={GRADIENT_TOP}
-        bottomColor={GRADIENT_BOTTOM}
-      />
+      <GradientBackground topColor={RED_TOP} bottomColor={RED_BOTTOM} />
       <AbsoluteFill
         style={{
           display: "flex",
