@@ -551,7 +551,11 @@ const Scene6StreamingText: React.FC<{ fps: number }> = ({ fps }) => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#FFFFFF" }}>
+    <AbsoluteFill>
+      <GradientBackground
+        topColor={LIGHT_BLUE_TOP}
+        bottomColor={LIGHT_BLUE_BOTTOM}
+      />
       <AbsoluteFill
         style={{
           display: "flex",
